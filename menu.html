@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hugh & Yvonne's Cocktail Party</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    /* Dark theme base */
+    body {
+      margin: 0;
+      padding: 0;
+      background:
+        linear-gradient(135deg, #1a1a1a 0%, #2e2e2e 100%),
+        url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80'><circle cx='40' cy='40' r='30' stroke='rgba(255,255,255,0.1)' stroke-width='2' fill='none'/><circle cx='50' cy='30' r='5' fill='rgba(255,255,255,0.1)'/><line x1='51' y1='31' x2='65' y2='15' stroke='rgba(255,255,255,0.1)' stroke-width='2'/></svg>");
+      background-repeat: repeat;
+      background-size: 80px 80px;
+      background-blend-mode: overlay;
+      color: #eee;
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 0.5em;
+      color: #ffdd57;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+    header p {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    /* Section title and divider */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #ffd15c;
+      margin: 1.5em 0 0.5em;
+      border-bottom: 2px solid rgba(255, 209, 92, 0.4);
+      display: inline-block;
+      padding-bottom: 0.2em;
+    }
+    hr.divider {
+      border: 0;
+      height: 1px;
+      background: rgba(255,255,255,0.2);
+      margin: 2em 0;
+    }
+
+    /* Menu grid */
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    /* Cocktail card */
+    .card {
+      background-color: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+    }
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #ffd15c;
+    }
+    .card p {
+      margin: 0 0 8px;
+      font-size: 0.95rem;
+      color: #ddd;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Hugh & Yvonne's Cocktail Party</h1>
+      <p>Welcome! Browse our cocktail menu below and pick your favorite drink.</p>
+    </header>
+
+    <!-- Special Cocktails -->
+    <section class="menu-section">
+      <h2 class="section-title">Special (Open Sesame)</h2>
+      <div class="menu">
+        <!-- 1 --> <div class="card"><h2>Okayama</h2><p>Sesame Fat Washed Bourbon, Peach</p><p>Musky, Eastern-inspired warmth</p></div>
+        <!-- 2 --> <div class="card"><h2>Tomoyo</h2><p>Sesame Fat Washed Bourbon, Sweet Vermouth, Campari</p><p>A bold twist on the Boulevardier</p></div>
+      </div>
+    </section>
+    <hr class="divider">
+
+    <!-- Gin Cocktails -->
+    <section class="menu-section">
+      <h2 class="section-title">Gin</h2>
+      <div class="menu">
+        <!-- 3 --> <div class="card"><h2>White Lady</h2><p>London Dry Gin, Cointreau, Lemon</p><p>Crisp, tangy elegance</p></div>
+        <!-- 4 --> <div class="card"><h2>Negroni</h2><p>London Dry Gin, Campari, Sweet Vermouth</p><p>Bitter-sweet, perfectly balanced</p></div>
+        <!-- 5 --> <div class="card"><h2>Rendezvous</h2><p>Gin, Maraschino Liqueur, Lime</p><p>Floral, refreshing rendezvous</p></div>
+      </div>
+    </section>
+    <hr class="divider">
+
+    <!-- Vodka Cocktails -->
+    <section class="menu-section">
+      <h2 class="section-title">Vodka</h2>
+      <div class="menu">
+        <!-- 6 --> <div class="card"><h2>Vodka Martini</h2><p>Vodka, Dry Vermouth</p><p>Clean, spirit-forward classic</p></div>
+      </div>
+    </section>
+    <hr class="divider">
+
+    <!-- Rum Cocktails -->
+    <section class="menu-section">
+      <h2 class="section-title">Rum</h2>
+      <div class="menu">
+        <!-- 7 --> <div class="card"><h2>Daiquiri</h2><p>White Rum, Lime Juice, Sugar</p><p>Tart, tropical simplicity</p></div>
+        <!-- 8 --> <div class="card"><h2>Lani-Honi</h2><p>White Rum, Benedictine, Lemon</p><p>Sweet, island-inspired honey</p></div>
+        <!-- 9 --> <div class="card"><h2>King's Jubilee</h2><p>Wite Rum, Maraschino Liqueur, Lemon</p><p>Regal warmth, fruity depth</p></div>
+        <!-- 10 --> <div class="card"><h2>Between the Sheets</h2><p>Light Rum, Cognac, Orange Liqueur, Lemon</p><p>Bright, alluringly complex</p></div>
+      </div>
+    </section>
+    <hr class="divider">
+
+    <!-- Tequila Cocktails -->
+    <section class="menu-section">
+      <h2 class="section-title">Tequila</h2>
+      <div class="menu">
+        <!-- 11 --> <div class="card"><h2>Margarita</h2><p>Tequila, Triple Sec, Lime</p><p>Zesty, beachside favorite</p></div>
+        <!-- 12 --> <div class="card"><h2>Vermouth-Arita</h2><p>Tequila, Sweet Vermouth, Orange Liqueur, Lime</p><p>Aromatic, vermouth riff</p></div>
+      </div>
+    </section>
+    <hr class="divider">
+
+    <!-- Whiskey Cocktails -->
+    <section class="menu-section">
+      <h2 class="section-title">Whiskey</h2>
+      <div class="menu">
+        <!-- 13 --> <div class="card"><h2>Whiskey Sour</h2><p>Bourbon, Lemon Juice, Sugar</p><p>Smooth, tangy froth</p></div>
+        <!-- 14 --> <div class="card"><h2>Boulevardier</h2><p>Bourbon, Campari, Sweet Vermouth</p><p>Rich, bitter allure</p></div>
+        <!-- 15 --> <div class="card"><h2>Frisco Sour</h2><p>Bourbon, Benedictine, Lemon</p><p>Old-school twist on sour</p></div>
+      </div>
+    </section>
+    <hr class="divider">
+
+    <!-- Other Cocktails -->
+    <section class="menu-section">
+      <h2 class="section-title">Other</h2>
+      <div class="menu">
+        <!-- 16 --> <div class="card"><h2>Sidecar</h2><p>Cognac, Triple Sec, Lemon</p><p>Classic, citrusy elegance</p></div>
+        <!-- 17 --> <div class="card"><h2>Queen Elizabeth</h2><p>Dry vermouth, Benedictine, Lime</p><p>Elegant, another twist on sour</p></div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
