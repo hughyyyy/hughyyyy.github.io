@@ -624,6 +624,14 @@
         user-select: none;
         -webkit-tap-highlight-color: transparent;
         position: relative;
+        transition: padding 0.3s ease;
+      }
+
+      .invitation-card.minimized .card-toggle {
+        padding: 1.5rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       /* Expand/Collapse hints */
@@ -703,6 +711,15 @@
       .card-header {
         text-align: center;
         margin-bottom: 1.2rem;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      .invitation-card.minimized .card-header {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        margin: 0;
+        overflow: hidden;
       }
 
       .card-title {
@@ -787,22 +804,6 @@
         font-size: clamp(0.65rem, 3vw, 0.75rem);
         color: rgba(255, 255, 255, 0.6);
         font-style: italic;
-      }
-
-      /* Decorative hearts */
-      .heart {
-        position: absolute;
-        color: rgba(255, 200, 200, 0.4);
-        font-size: 1.5rem;
-        animation: heartFloat 6s ease-in-out infinite;
-      }
-
-      .heart-1 { top: 0.5rem; left: 1rem; animation-delay: 0s; }
-      .heart-2 { top: 0.5rem; right: 1rem; animation-delay: 1s; }
-
-      @keyframes heartFloat {
-        0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
-        50% { transform: translateY(-8px) scale(1.1); opacity: 0.6; }
       }
 
       /* Mobile-specific optimizations */
@@ -931,9 +932,6 @@
     <!-- Invitation Card -->
     <div class="invitation-card minimized">
       <div class="card-toggle">
-        <span class="heart heart-1">♥</span>
-        <span class="heart heart-2">♥</span>
-        
         <div class="card-header">
           <h1 class="card-title">Malibu Elopement</h1>
           <p class="card-subtitle">You're Invited to Our Beach Ceremony</p>
