@@ -404,8 +404,17 @@
         transform: translateX(-50%);
         width: clamp(8px, 2.5vw, 12px);
         height: 70%;
-        background: linear-gradient(to right, #5d4e37, #8b7355, #5d4e37);
+        background: linear-gradient(
+          to right, 
+          #3d2f28, 
+          #5d4a3f, 
+          #4a3832,
+          #3d2f28
+        );
         border-radius: 6px;
+        box-shadow: 
+          inset -2px 0 4px rgba(0, 0, 0, 0.3),
+          2px 0 8px rgba(0, 0, 0, 0.2);
       }
 
       .palm-leaves {
@@ -423,9 +432,21 @@
         top: 0;
         width: clamp(40px, 14vw, 60px);
         height: clamp(8px, 2.5vw, 12px);
-        background: linear-gradient(90deg, transparent, #2d5016 20%, #4a7c2d 50%, #2d5016 80%, transparent);
+        background: linear-gradient(
+          90deg, 
+          transparent, 
+          #1a3d0f 15%, 
+          #2d5520 40%, 
+          #3a6b2d 50%, 
+          #2d5520 60%,
+          #1a3d0f 85%, 
+          transparent
+        );
         border-radius: 50%;
         transform-origin: center left;
+        box-shadow: 
+          0 1px 3px rgba(0, 0, 0, 0.3),
+          inset 0 1px 1px rgba(255, 255, 255, 0.1);
       }
 
       .palm-leaf:nth-child(1) { transform: translateX(-50%) rotate(-60deg); }
@@ -679,19 +700,25 @@
 
       /* Color palette circles */
       .color-palette {
-        display: flex;
-        justify-content: center;
-        gap: clamp(0.6rem, 2.5vw, 0.8rem);
-        margin: 1rem 0 1.2rem 0;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: clamp(0.5rem, 2vw, 0.7rem);
+        max-width: min(90%, 400px);
+        margin: 1rem auto 1.2rem auto;
+        justify-items: center;
       }
 
       .color-circle {
-        width: clamp(2.5rem, 10vw, 3.5rem);
-        height: clamp(2.5rem, 10vw, 3.5rem);
+        width: clamp(2.2rem, 9vw, 3rem);
+        height: clamp(2.2rem, 9vw, 3rem);
         border-radius: 50%;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         border: 2px solid rgba(255, 255, 255, 0.3);
         transition: transform 0.3s ease;
+      }
+
+      .color-circle:nth-child(5n) {
+        margin-right: 0;
       }
 
       .color-circle:hover {
@@ -956,6 +983,7 @@
         <div class="card-header">
           <h1 class="card-title">Malibu Elopement</h1>
           <p class="card-subtitle">You're Invited to Our Beach Ceremony</p>
+          <p class="collapse-hint">Click to collapse</p>
         </div>
         
         <p class="expand-hint">Click to expand</p>
@@ -996,16 +1024,32 @@
         <div class="divider" style="margin: 1.5rem 0;"></div>
 
         <div class="details" style="margin-bottom: 1.5rem;">
-          <div class="detail-line" style="border-left: none; padding-left: 0; margin-bottom: 0.6rem;">
+          <div class="detail-line" style="border-left: none; padding-left: 0; margin-bottom: 0.8rem;">
             <strong style="font-size: 1.1em;">Dress Code</strong>
           </div>
 
-          <div class="detail-line" style="border-left: none; padding-left: 0; line-height: 1.7; margin-bottom: 0.8rem;">
-            Light, breathable fabrics and lighter colors are preferred over typical formal wear. 
-            The groom will be wearing a white suit with stripes, and the bride will be wearing a white dress. 
-            Please note the ceremony will be on the sand, so consider appropriate footwear (or barefoot!) 
-            for a comfortable beach experience.
-          </div>
+          <ul style="list-style: none; padding-left: 0; margin: 0 0 1rem 0; line-height: 1.8;">
+            <li style="margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative;">
+              <span style="position: absolute; left: 0; color: rgba(255, 255, 255, 0.7);">•</span>
+              Light, breathable fabrics preferred
+            </li>
+            <li style="margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative;">
+              <span style="position: absolute; left: 0; color: rgba(255, 255, 255, 0.7);">•</span>
+              Lighter colors recommended over formal wear
+            </li>
+            <li style="margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative;">
+              <span style="position: absolute; left: 0; color: rgba(255, 255, 255, 0.7);">•</span>
+              Hugh will be wearing a white suit with stripes
+            </li>
+            <li style="margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative;">
+              <span style="position: absolute; left: 0; color: rgba(255, 255, 255, 0.7);">•</span>
+              Yvonne will be wearing a white dress
+            </li>
+            <li style="margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative;">
+              <span style="position: absolute; left: 0; color: rgba(255, 255, 255, 0.7);">•</span>
+              Please note the ceremony could be on the sand, so consider appropriate footwear (or barefoot!) for a comfortable beach experience.
+            </li>
+          </ul>
 
           <div style="text-align: center; font-size: clamp(0.8rem, 3.5vw, 0.9rem); color: rgba(255, 255, 255, 0.8); margin-bottom: 0.5rem; font-style: italic;">
             Recommended color options:
@@ -1017,14 +1061,17 @@
             <div class="color-circle" style="background: #6BA3A7;" title="Teal Ocean"></div>
             <div class="color-circle" style="background: #4A7C7E;" title="Deep Sea"></div>
             <div class="color-circle" style="background: #8B9E8A;" title="Sage Green"></div>
+            <div class="color-circle" style="background: #FFB5C5;" title="Blush Pink"></div>
+            <div class="color-circle" style="background: #E6BBE2;" title="Lavender Mist"></div>
+            <div class="color-circle" style="background: #FFD4A3;" title="Peach Glow"></div>
+            <div class="color-circle" style="background: #A7D8DE;" title="Sky Blue"></div>
+            <div class="color-circle" style="background: #C8A9D5;" title="Soft Violet"></div>
           </div>
         </div>
 
         <div class="footer-note" style="margin-bottom: 1rem;">
           Join us as we celebrate love where the ocean meets the sky
         </div>
-
-        <p class="collapse-hint">Click to collapse</p>
       </div>
     </div>
 
