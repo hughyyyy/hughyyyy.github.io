@@ -36,7 +36,14 @@
       .intro-screen {
         position: fixed;
         inset: 0;
-        background: linear-gradient(135deg, #ff8844 0%, #ffaa66 50%, #ffc999 100%);
+        background: linear-gradient(
+          135deg, 
+          #6b4e9f 0%, 
+          #9b6fb8 25%,
+          #d97aae 50%, 
+          #ff8fb3 75%,
+          #ffa8b8 100%
+        );
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -50,8 +57,9 @@
         font-size: clamp(3rem, 15vw, 6rem);
         color: #ffffff;
         text-shadow: 
-          0 4px 20px rgba(0, 0, 0, 0.3),
-          0 0 40px rgba(255, 200, 150, 0.6);
+          0 4px 20px rgba(0, 0, 0, 0.4),
+          0 0 40px rgba(255, 180, 220, 0.8),
+          0 0 60px rgba(217, 122, 174, 0.5);
         text-align: center;
         padding: 0 2rem;
         max-width: 90%;
@@ -82,8 +90,8 @@
         padding: 0 2rem;
         letter-spacing: 1px;
         text-shadow: 
-          0 2px 8px rgba(0, 0, 0, 0.2),
-          0 0 20px rgba(255, 200, 150, 0.4);
+          0 2px 8px rgba(0, 0, 0, 0.3),
+          0 0 20px rgba(255, 180, 220, 0.6);
         text-align: center;
         opacity: 0;
         animation: datesFadeIn 1.5s ease-out 1.5s forwards;
@@ -139,12 +147,14 @@
         inset: 0;
         background: linear-gradient(
           to bottom,
-          #ff6b35 0%,
-          #ff8844 20%,
-          #ffaa66 40%,
-          #ffc999 60%,
-          #ffd9b0 80%,
-          #ffe5cc 100%
+          #6b4e9f 0%,
+          #8b5fa8 15%,
+          #d97aae 30%,
+          #ff8fb3 45%,
+          #ffa8b8 60%,
+          #ffc9a8 75%,
+          #ffe5cc 90%,
+          #fff0e0 100%
         );
         z-index: 1;
         overflow: hidden;
@@ -153,8 +163,9 @@
       /* Animated Sun */
       .sun {
         position: absolute;
-        left: 8%;
-        top: 20%;
+        left: 50%;
+        top: 58%;
+        transform: translateX(-50%);
         width: clamp(100px, 25vw, 140px);
         height: clamp(100px, 25vw, 140px);
         border-radius: 50%;
@@ -168,14 +179,15 @@
       }
 
       @keyframes sunPulse {
-        0%, 100% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.08); opacity: 0.95; }
+        0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
+        50% { transform: translateX(-50%) scale(1.08); opacity: 0.95; }
       }
 
       /* Sun reflection on water */
       .sun-reflection {
         position: absolute;
-        left: 8%;
+        left: 50%;
+        transform: translateX(-50%);
         bottom: 25%;
         width: clamp(100px, 25vw, 140px);
         height: clamp(150px, 35vh, 250px);
@@ -191,14 +203,14 @@
       }
 
       @keyframes reflectionShimmer {
-        0%, 100% { opacity: 0.6; transform: scaleY(1); }
-        50% { opacity: 0.8; transform: scaleY(1.1); }
+        0%, 100% { opacity: 0.6; transform: translateX(-50%) scaleY(1); }
+        50% { opacity: 0.8; transform: translateX(-50%) scaleY(1.1); }
       }
 
       /* Clouds */
       .cloud {
         position: absolute;
-        background: rgba(255, 240, 220, 0.4);
+        background: rgba(255, 180, 200, 0.35);
         border-radius: 100px;
         z-index: 2;
         animation: cloudFloat 60s linear infinite;
@@ -208,7 +220,7 @@
       .cloud::after {
         content: '';
         position: absolute;
-        background: rgba(255, 240, 220, 0.4);
+        background: rgba(255, 180, 200, 0.35);
         border-radius: 100px;
       }
 
@@ -599,9 +611,13 @@
         right: 0;
         width: 100%;
         max-height: 55vh;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(16px) saturate(130%);
-        border: 1px solid rgba(255, 255, 255, 0.4);
+        background: linear-gradient(
+          to bottom,
+          rgba(60, 50, 70, 0.75),
+          rgba(70, 60, 80, 0.8)
+        );
+        backdrop-filter: blur(20px) saturate(150%);
+        border: 1px solid rgba(255, 255, 255, 0.5);
         border-radius: 24px 24px 0 0;
         box-shadow: 
           0 -8px 32px rgba(0, 0, 0, 0.3),
@@ -638,11 +654,12 @@
       .expand-hint, .collapse-hint {
         text-align: center;
         font-size: clamp(0.7rem, 3.2vw, 0.85rem);
-        color: rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255, 0.85);
         margin-top: 0.3rem;
         font-style: italic;
         letter-spacing: 0.5px;
         transition: opacity 0.3s ease;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
       }
 
       .invitation-card:not(.minimized) .expand-hint {
@@ -742,9 +759,10 @@
 
       .card-subtitle {
         font-size: clamp(0.8rem, 3.5vw, 0.95rem);
-        color: rgba(255, 255, 255, 0.9);
+        color: rgba(255, 255, 255, 0.95);
         font-weight: 300;
         letter-spacing: 0.3px;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
       }
 
       .couple-names {
@@ -783,13 +801,15 @@
         line-height: 1.6;
         font-size: clamp(0.85rem, 3.8vw, 0.95rem);
         margin-bottom: 0.8rem;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
       }
 
       .details strong {
-        color: #ffe5cc;
+        color: #fff0dd;
         font-weight: 600;
         display: inline-block;
         min-width: clamp(70px, 20vw, 85px);
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
       }
 
       .detail-line {
@@ -802,8 +822,9 @@
         text-align: center;
         margin-top: 0.7rem;
         font-size: clamp(0.65rem, 3vw, 0.75rem);
-        color: rgba(255, 255, 255, 0.6);
+        color: rgba(255, 255, 255, 0.75);
         font-style: italic;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
       }
 
       /* Mobile-specific optimizations */
