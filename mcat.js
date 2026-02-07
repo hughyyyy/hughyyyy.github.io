@@ -110,6 +110,93 @@ const sections = [
       },
     ],
   },
+      {
+    title: "Passage 3 (Enough jokes, this one is serious, Questions 1-19)",
+    passage: [
+      "Accounts of intimate commitment often privilege dramatic origins: the decisive confession, the improbable coincidence, the moment in which uncertainty is resolved by a single, clarifying act. Yet in many relationships the decisive element is less an event than a pattern of attention, rehearsed over time. A partnership may be initiated by a scene fit for narrative-an unexpected meeting, a memorable place-but it is sustained by the repeated choice to recognize what the other person is becoming, even when that becoming is stressful, inconvenient, or unglamorous.",
+      "Hugh and Yvonne's story is frequently misdescribed as though it were authored by coincidence alone. They first met in their first year at the University of Waterloo. The most salient fact, at least to Hugh, was not romantic but cultural: Yvonne was also Hong Kongnese. That recognition did not immediately bloom into a relationship; at the time, she was with someone else, and the moment passed into the category of encounters one remembers without knowing why. Three years later, in 2019, they met again in an elevator in Waterloo-an encounter too brief to count as reconciliation and too charged to count as ordinary. What followed was not a sudden transformation but something subtler: they began spending time together. In retrospect, that early period reads less like a 'restart' than a first real beginning, because it introduced a shared rhythm rather than a dramatic turning point.",
+      "If the early chapters suggest gradualness, the middle chapters underscore discontinuity. They broke up in 2021, which Hugh describes in the compressed language couples often adopt when the real story is longer than the sentence: 'fundamental issues' on both side. What matters for an outside observer is not the content of the issues-about which the parties may disagree-but the role the breakup plays in the narrative. It does not function as evidence that the relationship lacked seriousness; rather, it tests whether seriousness is expressed by persistence at any cost or by the willingness to pause when continuation would be careless. The mere fact of separation does not settle the question. The subsequent decisions do.",
+      "Those decisions accumulated quickly once geography shifted. Hugh moved to Seattle in August 2022, and by October Yvonne came to Seattle for a conference while still working in San Francisco. Their second sustained season together began there-not as a return to an earlier simplicity but as a deliberate choice made under new conditions. By April 2023 she moved to Seattle, and they lived in Bellevue through August 2025. The Bellevue years were outwardly uneventful: time at home, television after long days, cooking, occasional coffee-shop visits, the small choreography of grocery runs and shared errands. Yet such 'uneventfulness' can be misunderstood. For a couple that had already endured discontinuity, calm is not the absence of story but a kind of achievement: it is the creation of a daily life that does not constantly threaten to fall apart.",
+      "The calm, however, was not static; it was preparatory. Yvonne was studying with the long horizon in mind, working toward admission to medical school. In August 2025 she began at UCLA, and the relationship entered a more asymmetrical phase. Medical education does not merely increase workload; it changes how time feels, compressing it into tasks that are never fully complete. Yvonne, in her first year, often approaches the program as an anxious grinder: eighty-hour weeks of studying, research, clinics, and shadowing, accompanied by recurring episodes of verbalized catastrophe'I am gonna fail'repeated less as a prediction than as a method of coping with pressure by naming it.",
+      "It is in this phase that Hugh's mode of care becomes legible. He does not describe himself as someone who invents 'little systems' for domestic life; he describes himself as someone who pays attention to detail, and supplies constant support. The distinction matters. His care is not the romanticized spontaneity of grand gestures but the steadier practice of being present when the other person's confidence collapses. When Yvonne spirals, Hugh responds with physical reassurance-hugs-and with contradiction delivered gently but insistently: it is not true; you are going to do good. This method is neither purely emotional nor purely practical. It is an attempt to function as a stable surface against which the other person can recalibrate.",
+      "In November 2025, shortly before Hugh's new job in Los Angeles began in December, they eloped on Point Dume Beach in Malibu-ocean in front of them, the ceremony stripped down to what could not be delegated. The timing is revealing: not a wedding after everything was settled, but a wedding amid transition. Their move from Seattle to Los Angeles was not merely a change in weather-though both insist they love LA's weather, its sense of a new chapter-but a change in what their relationship had to contain: ambition, exhaustion, new routines, and the psychological demands of a first-year medical student aiming, at least tentatively, toward dermatology.",
+      "The temptation, when describing such a couple, is to praise effort as though effort were identical to care. But effort can be misdirected. One may support another person in ways that are convenient to provide rather than needed to receive. For that reason, the most useful measure of care is not intensity but accuracy: the degree to which one's actions fit the other person's real pressures, not the pressures imagined from a distance. In Hugh's case, even the decision to borrow the formal textures of Yvonne's academic life for a Valentine gesture can be read as an attempt at such accuracy: the appropriation of Yvonne's daily form of stress into a form of play, offered not as evaluation but as recognition. To call her 'Bubu' within that borrowed structure would be to perform the same conversion on a smaller scale: turning a high-stakes format into an intimate language. Yet the success of the gesture would still depend on whether Yvonne experiences it as being known rather than merely being impressed.",
+    ],
+    questions: [
+      {
+        prompt: "The primary purpose of the opening paragraph is to:",
+        choices: [
+          "Argue that dramatic romantic events are deceptive because they are rarely sincere",
+          "Establish a framework distinguishing event-based narratives from sustained attentiveness",
+          "Suggest that most relationships fail because they lack memorable origins",
+          "Introduce the claim that coincidence is the dominant cause of long-term commitment",
+        ],
+      },
+      {
+        prompt: "The elevator meeting in 2019 is presented primarily as:",
+        choices: [
+          "The definitive moment of reconciliation after a prolonged separation",
+          "A symbolic 'reset' that restores the relationship to its original state",
+          "A brief encounter that initiates a shared rhythm rather than a sudden transformation",
+          "An example of coincidence replacing personal agency in romantic decision-making",
+        ],
+      },
+      {
+        prompt: "In context, the author's treatment of the 2021 breakup most strongly implies that the breakup:",
+        choices: [
+          "Proves the relationship lacked seriousness until external circumstances improved",
+          "Demonstrates that incompatibility can be resolved primarily through persistence",
+          "Functions as a test of whether 'seriousness' includes the capacity to pause responsibly",
+          "Shows that fundamental issues are irrelevant once a couple shares enough time together",
+        ],
+      },
+      {
+        prompt: "The Bellevue years are described as 'uneventful' chiefly to emphasize that they:",
+        choices: [
+          "Represented stagnation that was later corrected by moving to Los Angeles",
+          "Were falsely comforting because they concealed unresolved conflict",
+          "Were an achieved stability that mattered precisely because of prior discontinuity",
+          "Were meaningful only insofar as they helped Yvonne gain admission to UCLA",
+        ],
+      },
+      {
+        prompt: "The phrase 'verbalized catastrophe' (fifth paragraph) most nearly suggests that Yvonne's repeated statement ('I am gonna fail') is:",
+        choices: [
+          "A literal assessment grounded in objective evidence of poor performance",
+          "A performative expression that externalizes pressure rather than predicts an outcome",
+          "An attempt to manipulate Hugh into providing reassurance on demand",
+          "A sign that she fundamentally dislikes medicine and regrets her career choice",
+        ],
+      },
+      {
+        prompt: "Which of the following best captures the author's depiction of Hugh's care during Yvonne's stress episodes?",
+        choices: [
+          "It is primarily logistical, focusing on reducing her workload through planning",
+          "It is primarily evaluative, focusing on correcting her study strategies",
+          "It is stabilizing, combining physical reassurance with gentle contradiction of her fears",
+          "It is distancing, aiming to let her self-regulate without interference",
+        ],
+      },
+      {
+        prompt: "The Malibu elopement is used mainly to illustrate that the couple's commitment:",
+        choices: [
+          "Was postponed until professional uncertainties were eliminated",
+          "Occurred as a deliberate choice within transition rather than after stability was achieved",
+          "Was motivated chiefly by a desire to match Los Angeles cultural expectations",
+          "Reflected a preference for isolation over community and long-term planning",
+        ],
+      },
+      {
+        prompt: "The final paragraph most strongly suggests that the 'exam-style Valentine' gesture would be judged successful if it:",
+        choices: [
+          "Demonstrates sufficient effort to compensate for Yvonne's workload",
+          "Impresses Yvonne with Hugh's ability to mimic academic conventions",
+          "Is experienced by Yvonne as recognition that accurately fits her real pressures",
+          "Provides Yvonne an opportunity to practice test-taking under relaxed conditions",
+        ],
+      },
+    ],
+  },
 ];
 
 const answers = sections.map((section) => Array(section.questions.length).fill(null));
@@ -219,3 +306,5 @@ nextBtn.addEventListener("click", () => {
 
 renderPassage();
 renderQuestion();
+
+
