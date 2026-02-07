@@ -11,7 +11,7 @@ const scoreReport = document.getElementById("scoreReport");
 
 const sections = [
   {
-  title: "Passage 1",
+  title: "Passage 1 (Questions 1-67)",
     passage: [
       "Hugh has a habit of turning feelings into features. When life hands him something tender--stress, love, uncertainty--he doesn't journal about it in a leather notebook. He quietly opens a repo, names it something mildly chaotic, and starts building.",
       "In most rooms, Hugh is \"the technical one,\" which usually translates to \"the person who gets volunteered to fix things.\" It's not that he minds. In fact, he enjoys the moment when a problem goes from foggy to solvable. A login flow that loops? A calendar that won't render items for the right month? Infinite scroll that stutters like it's remembering something painful? Hugh will patiently rearrange state, re-check assumptions, and make it work--often while explaining the reasoning so clearly that other people feel smarter just standing near him.",
@@ -61,7 +61,7 @@ const sections = [
     ],
   },
   {
-    title: "Passage 2",
+    title: "Passage 2 (Questions 1-59)",
     passage: [
       "People like to pretend that romance is spontaneous--an unexpected bouquet, a dramatic speech, a movie-perfect glance across the room. But for a certain kind of person, spontaneity is mostly what happens when a plan survives first contact with reality. For him, love is less like fireworks and more like systems design: not cold or mechanical, but intentional. If something matters, you build it so it works when it counts.",
       "This is not because he is incapable of simple gestures. He can do simple. He can say \"I love you,\" and he means it. The problem is that his mind has a habit of continuing after the sentence ends. \"I love you\" becomes: How do I make her feel it on a Tuesday? How do I protect her energy when she's exhausted? How do I make one small moment easier? His affection, in other words, keeps trying to become useful.",
