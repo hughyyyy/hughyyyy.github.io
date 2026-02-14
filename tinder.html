@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tinder-Style Swipe Cards</title>
+    <style>
+      :root {
+        --bg-start: #ff2f69;
+        --bg-end: #ff6b4a;
+        --nope: #fd5068;
+        --like: #2de2bf;
+        --white: #ffffff;
+        --ink: #202124;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: "Avenir Next", "Helvetica Neue", "Segoe UI", sans-serif;
+        background: linear-gradient(105deg, var(--bg-start), var(--bg-end));
+        color: var(--white);
+      }
+
+      .app {
+        width: min(96vw, 390px);
+      }
+
+      .phone {
+        background: #f8f8f8;
+        border-radius: 36px;
+        padding: 10px;
+        box-shadow:
+          0 30px 45px rgba(0, 0, 0, 0.35),
+          inset 0 0 0 2px rgba(255, 255, 255, 0.7);
+      }
+
+      .screen {
+        position: relative;
+        border-radius: 28px;
+        overflow: hidden;
+        background: #ececec;
+      }
+
+      .topbar {
+        position: absolute;
+        top: 8px;
+        left: 0;
+        right: 0;
+        z-index: 250;
+        display: flex;
+        justify-content: center;
+        pointer-events: none;
+      }
+
+      .top-pill {
+        background: rgba(255, 255, 255, 0.92);
+        color: #fd5068;
+        border-radius: 999px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        padding: 6px 16px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+      }
+
+      .stack {
+        position: relative;
+        height: min(72vh, 590px);
+      }
+
+      #restartBtn {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        z-index: 260;
+        width: 40px;
+        height: 40px;
+        border-radius: 999px;
+        border: none;
+        background: rgba(255, 255, 255, 0.92);
+        color: #fd5068;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        display: grid;
+        place-items: center;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      #restartBtn svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      #cardStack {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .card {
+        position: absolute;
+        inset: 0;
+        border-radius: 26px;
+        overflow: hidden;
+        background: #171717;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+        touch-action: none;
+        user-select: none;
+      }
+
+      .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .card-overlay {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(to bottom, rgba(0, 0, 0, 0.05), transparent 30%),
+          linear-gradient(to top, rgba(0, 0, 0, 0.88) 6%, rgba(0, 0, 0, 0.35) 34%, transparent 55%);
+      }
+
+      .photo-progress {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        height: 4px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.35);
+        overflow: hidden;
+      }
+
+      .photo-progress::before {
+        content: "";
+        display: block;
+        width: 34%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.95);
+      }
+
+      .card-content {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+      }
+
+      .name {
+        margin: 0;
+        font-size: 2rem;
+        line-height: 1;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+      }
+
+      .desc {
+        margin: 8px 0 0;
+        font-size: 1rem;
+        line-height: 1.3;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .badge {
+        position: absolute;
+        top: 68px;
+        padding: 6px 12px;
+        border: 3px solid;
+        border-radius: 10px;
+        font-weight: 800;
+        font-size: 1rem;
+        opacity: 0;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+
+      .badge-nope {
+        left: 16px;
+        border-color: var(--nope);
+        color: var(--nope);
+        transform: rotate(-14deg);
+      }
+
+      .badge-like {
+        right: 16px;
+        border-color: var(--like);
+        color: var(--like);
+        transform: rotate(14deg);
+      }
+
+      .controls {
+        margin-top: 14px;
+        padding: 10px 14px 14px;
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        background: #ffffff;
+        border-radius: 0 0 28px 28px;
+      }
+
+      .action-btn {
+        border: none;
+        cursor: pointer;
+        border-radius: 999px;
+        width: 56px;
+        height: 56px;
+        display: grid;
+        place-items: center;
+        background: #ffffff;
+        box-shadow: 0 8px 16px rgba(15, 15, 15, 0.14);
+      }
+
+      .action-btn svg {
+        width: 26px;
+        height: 26px;
+      }
+
+      #dislikeBtn {
+        color: #fd5068;
+      }
+
+      #superLikeBtn {
+        color: #11b2ff;
+      }
+
+      #likeBtn {
+        color: #2de2bf;
+      }
+
+      .empty {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 24px;
+        border-radius: 26px;
+        color: rgba(255, 255, 255, 0.96);
+        background: rgba(0, 0, 0, 0.48);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <section class="phone">
+        <div class="screen">
+          <div class="topbar">
+            <div class="top-pill">flame 48</div>
+          </div>
+
+          <section class="stack">
+            <button id="restartBtn" type="button" aria-label="Restart cards" title="Restart">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12a9 9 0 1 1-2.64-6.36"></path>
+                <polyline points="21 3 21 9 15 9"></polyline>
+              </svg>
+            </button>
+            <div id="cardStack"></div>
+          </section>
+
+          <div class="controls">
+            <button id="dislikeBtn" class="action-btn" type="button" aria-label="Dislike">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+                <path d="M6 6l12 12"></path>
+                <path d="M18 6L6 18"></path>
+              </svg>
+            </button>
+            <button id="superLikeBtn" class="action-btn" type="button" aria-label="Super Like">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2l2.78 5.63 6.22.91-4.5 4.39 1.06 6.2L12 16.9l-5.56 2.93 1.06-6.2L3 8.54l6.22-.91L12 2z"></path>
+              </svg>
+            </button>
+            <button id="likeBtn" class="action-btn" type="button" aria-label="Like">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 21s-7-4.35-9.24-8.43A5.49 5.49 0 0 1 12 5.36a5.49 5.49 0 0 1 9.24 7.21C19 16.65 12 21 12 21z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="tinder.js"></script>
+  </body>
+</html>
