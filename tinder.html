@@ -48,27 +48,6 @@
         background: #ececec;
       }
 
-      .topbar {
-        position: absolute;
-        top: 8px;
-        left: 0;
-        right: 0;
-        z-index: 250;
-        display: flex;
-        justify-content: center;
-        pointer-events: none;
-      }
-
-      .top-pill {
-        background: rgba(255, 255, 255, 0.92);
-        color: #fd5068;
-        border-radius: 999px;
-        font-size: 0.95rem;
-        font-weight: 700;
-        padding: 6px 16px;
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-      }
-
       .stack {
         position: relative;
         height: min(72vh, 590px);
@@ -112,6 +91,7 @@
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
         touch-action: none;
         user-select: none;
+        will-change: transform, opacity;
       }
 
       .card img {
@@ -252,10 +232,6 @@
     <main class="app">
       <section class="phone">
         <div class="screen">
-          <div class="topbar">
-            <div class="top-pill">flame 48</div>
-          </div>
-
           <section class="stack">
             <button id="restartBtn" type="button" aria-label="Restart cards" title="Restart">
               <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
